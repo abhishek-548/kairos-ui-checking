@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="C:\Users\admin\Desktop\kairosavadu\newentityequipment.css">
+</head>
+<body>
+	<br>
+	<div id="name">
+		<span id="span1">NAME OF EQUIPMENT :</span>
+		<input id="input" type="text" name="">
+	</div>
+	<div id="selection">
+		<div id="selectiontitle">
+			<span id="span2">SELECT QUESTION TITLE :</span>
+		</div>
+		<div id="selectioncontainer">
+			<div id="container">
+				<br><br>
+				<span onclick="fun(this)">Question 1</span>
+				<span onclick="fun(this)">Question 2</span>
+				<span onclick="fun(this)">Question 3</span><br><br><br>
+				<span onclick="fun(this)">Question 4</span>
+				<span onclick="fun(this)">Question 5</span>
+				<span onclick="fun(this)">Question 6</span>
+				<br><br><br>
+				<span onclick="fun(this)">Question 7</span>
+				<span onclick="fun(this)">Question 8</span>
+				<span onclick="fun(this)">Question 9</span>
+			</div>
+		</div>
+	</div>
+	<div id="answers">
+		<div id="enterans">
+			<span id="span3">ENTER ANSWERS :</span>
+		</div>
+		<div id="answerscontainer">
+			<div id="answersvalues">
+				
+			</div>
+		</div>
+	</div>
+	<br><br><br>
+
+
+	<script type="text/javascript">
+		function fun(element){
+		if(element.style.color!="white"){
+			element.style.color = "white";
+			element.style.backgroundColor = "#267DFF";
+			var val = element.firstChild.nodeValue;
+			var parent = document.getElementById("answersvalues");
+			var d = document.createElement("DIV");
+			var d1 = document.createElement("DIV");
+			d1.setAttribute("class","links")
+			d.setAttribute("class","divs")
+			var input = document.createElement("textarea");
+			var input1 = document.createElement("textarea");
+			input.cols = "70";
+			input.rows = "8";
+			input1.rows = "3";
+			input1.cols = "70";
+			input1.placeholder = "Enter Links here.."
+			input.placeholder = "Enter your answer here.."
+			var p = document.createElement("P");
+			p.innerText = val;
+			d.appendChild(p);
+			d1.appendChild(input1);
+			d.appendChild(input);
+			parent.appendChild(d);
+			parent.appendChild(d1);
+		}
+		else{
+			var val = element.firstChild.nodeValue;
+			element.style.color = "black";
+			element.style.backgroundColor = "white";
+			var x = document.getElementsByClassName("divs");
+			var x1 = document.getElementsByClassName("links");
+			for(var i=0;i<x.length;i++){
+				y = x[i];
+				var val1 = y.firstChild.innerText.trim();
+				val = val.trim();
+				if(val1==val){
+					x[i].style.display = "none";
+					x1[i].style.display = "none";
+				}
+			}
+		}
+	}
+
+	</script>
+</body>
+</html>
